@@ -2,7 +2,8 @@ var elem = document.querySelector(".main-carousel");
 var flkty = new Flickity(elem, {
   // options
   cellAlign: "center",
-  contain: true
+  contain: true,
+  hash: true
 });
 
 // element argument can be a selector string
