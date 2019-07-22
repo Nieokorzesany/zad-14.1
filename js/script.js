@@ -25,3 +25,17 @@ flkty.on("scroll", function(progress) {
   progress = Math.max(0, Math.min(1, progress));
   progressBar.style.width = progress * 100 + "%";
 });
+
+var show = document.getElementsByClassName("show")[0];
+var templateHello = document.getElementById("template-hello").innerHTML;
+var templateList = document.getElementById("template-product-list").innerHTML;
+Mustache.parse(templateHello);
+var generatedHello = "";
+for (var i = 0; i < data.length; i++) {
+  generatedHello += Mustache.render(templateHello, data[i]);
+}
+
+//var list = Mustache.render(templateList, { list: generatedHello });
+//var generatedHello = Mustache.render(templateHello, data[1]);
+//elem.insertAdjacentHTML("beforeend", generatedHello);
+show.insertAdjacentHTML("beforeend", generatedHello);
