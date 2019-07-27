@@ -11,66 +11,9 @@
 </head>
 
 <body>
-    <div class="carousel ">
-        <!--     <div class="">
-            <div class="carousel-cell" id="carousel-cell1">
-                <div class="container"
-                    style="background-image:url('https://as2.ftcdn.net/jpg/01/75/38/79/500_F_175387908_9AknThAnMO7uETKNmqzjUPG2wKlduExu.jpg')">
-                    <p>Prague</p>
-                    <button class="restart">
-                        <p>restart</p>
-                    </button>
-                </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell2">
-                <div class="container"
-                    style="background-image:url('https://as2.ftcdn.net/jpg/00/60/00/71/500_F_60007133_IWPkUneWvn0LBQWRxoTjgPaDY7e23dyC.jpg')">
-                    <p>Amsterdam</p>
-                    <button class="restart">
-                        <p>restart</p>
-                    </button>
-                </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell3">
-                <div class="container"
-                    style="background-image:url('https://as2.ftcdn.net/jpg/00/88/33/35/500_F_88333549_kO7WoF3OOygb9qpTQ6EvdhspcBqpMVkx.jpg')">
-                    <p>Moscow</p>
-                    <button class="restart">
-                        <p>restart</p>
-                    </button>
-                </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell4">
-                <div class="container"
-                    style="background-image:url('https://as2.ftcdn.net/jpg/01/08/47/29/500_F_108472954_A3Y42CvYf3GLzKKb5CJjVxuoal8TLE9M.jpg')">
-                    <p>London</p>
-                    <button class="restart">
-                        <p>restart</p>
-                    </button>
-                </div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell5">
-                <div class="container"
-                    style="background-image:url('https://as1.ftcdn.net/jpg/00/88/40/08/500_F_88400836_Wp335WSJTZQIo8fQwsaEkZsO851m4BAR.jpg')">
-                    <p>Rome</p>
-                    <button class="restart">
-                        <p>restart</p>
-                    </button>
-                </div>
-            </div>
-        </div> -->
-    </div>
-    <div class="progress-bar"></div>
-    <div class="nav">
-        <a href="#carousel-cell1">Prague</a>
-        <a href="#carousel-cell2">Amsterdam</a>
-        <a href="#carousel-cell3">Moscow</a>
-        <a href="#carousel-cell4">London</a>
-        <a href="#carousel-cell5">Rome</a>
-    </div>
-
 
     <div class="show main-carousel"></div>
+    <div class="progress-bar"></div>
     </div>
     <script>
         var data = [
@@ -103,17 +46,15 @@
     </script>
 
 
-    <script id="template-product-list" type="x-tmpl-mustache">
-        <div class="main-carousel">
-        {{{list}}}
-        </div>
-    </script>
 
     <script id="template-hello" type="x-tmpl-mustache">
             <div class="carousel-cell">
                     <div class="container"
                     style="background-image:url({{image}})">
                         <p>{{title}}</p>
+                        <div class="desc">
+                            {{{description}}}
+                            </div>
                         <button class="restart">
                             <p>restart</p>
                         </button>

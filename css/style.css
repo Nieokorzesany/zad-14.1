@@ -22,6 +22,16 @@
   display: inline-block;
   padding: 10px;
 }
+.container .desc {
+  text-align: left;
+}
+.container .desc p {
+  font-size: 20px;
+  color: white;
+  background: black;
+  display: inline-block;
+  padding: 10px;
+}
 
 /* white circles */
 .flickity-page-dots .dot {
