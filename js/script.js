@@ -33,7 +33,6 @@ flkty.on("scroll", function(progress) {
   progressBar.style.width = progress * 100 + "%";
 });
 
-const googleMapsApiKey = "AIzaSyCSsduWuUf1f65gjPOpi1H7bLIR6kb7Qvg";
 
 // Initialize and add the map
 window.initMap = function() {
