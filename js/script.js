@@ -1,5 +1,7 @@
 // element argument can be a selector string
 //   for an individual element
+var gMapsArr = [];
+var map = null;
 
 var progressBar = document.querySelector(".progress-bar");
 
@@ -33,17 +35,36 @@ flkty.on("scroll", function(progress) {
   progressBar.style.width = progress * 100 + "%";
 });
 
-const googleMapsApiKey = "AIzaSyCSsduWuUf1f65gjPOpi1H7bLIR6kb7Qvg";
+flkty.on("change", function(index) {
+  if (map) {
+    // map.setCenter(
+    map.panTo(gMapsArr[index].getPosition());
+  }
+});
 
 // Initialize and add the map
 window.initMap = function() {
   // The map, centered at Uluru
-  var map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById("map"), {
     zoom: 6,
     center: data[0].coords
   });
+
   // The marker, positioned at Uluru
   for (var i = 0; i < data.length; i++) {
-    new google.maps.Marker({ position: data[i].coords, map: map });
+    var gMap = new google.maps.Marker({ position: data[i].coords, map: map });
+    console.log("gMap", gMap);
+    gMapsArr.push(gMap);
+
+    // gMap.inArrayIndex = i;
+
+    gMap.addListener(
+      "click",
+      function(data) {
+        flkty.select(this.data);
+        console.log("this", this);
+        map.panTo(this.gMap.getPosition());
+      }.bind({ data: i, gMap: gMap })
+    );
   }
 };
